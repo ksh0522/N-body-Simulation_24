@@ -1,0 +1,28 @@
+class particle//생성하려는 particle의 성질을 나타내고, 그 파티클을 생성하고 제거하는 일을 담당한다. 
+{
+	private: 
+
+		double mass; //particle의 질량 
+		double position[2];//particle의 위치, [x좌표, y좌표] 나타내지는 배열 
+		double velocity[2];//particle의 속도, [x벡터, y벡터] 로 나타내지는 배열 
+		
+	public:
+		particle(double mass_, double x_position, double y_position, double x_velocity = 0, double y_velocity = 0);
+		//particle의 생성자, 함수 인자에 맞춰서 member variable 값을을 지정해준다. 
+		void pp();//particle의 정보를 출력한다(mass, position, velocity를 출력한다.) 
+		void ap();//지정한 특성(mass, position, velocity)에 맞는 particle을 생성한다. 
+		void dp();//particle을 제거한다. 
+		void cp(bool TorF = true);//bool을 인자로 받아 true 일 경우 particle의 위치를 고정하고, false일 경우 고정하지 않는다. 
+};
+
+class force//생성하려는 힘의 특성을 나타낸다. 
+{
+	private:
+		double forcedrct[2];//힘의 벡터, [x벡터, y벡터]로 나태내지는 배열 
+		
+	public:
+		force(x_force = 0, y_force = 0);//force 의 생성자, 함수 인자에 맞춰서 forcedrct의 값을 지정해준다. 
+		void pf();//힘의 정보(forcedrct)를 출력한다. 
+		void cg(bool TorF = true);//bool을 인자로 받아,  인자가 true일 경우 중력을 고려하고, false일 경우 중력을 무시한다.  
+		
+};
