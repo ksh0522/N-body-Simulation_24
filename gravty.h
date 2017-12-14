@@ -22,13 +22,6 @@ public:
 	Set(int num);//constructor
 
 
-	//////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	//std::map<int, std::map<int, Force *>> copy_force_info;
-	//////////////////////////////////////////////////
-	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 	void Set::indiv_set_make(int part_num, int set_num, Particle ** particle_add, Set* set_info);
 	/** this function help us to save particle into set
 	/* int part_num : this int variable notice which particle to be added into set
@@ -81,16 +74,17 @@ public:
 
 
 	//이거 내가 추가한거 일단 알아보기 쉽게 한글로 주석달게 나중에 영어로 바꾸든가 하자
-	
+
 	struct GF //gravity force (girl friend)
 	{
-		double gf[2]{}; //x,y 로 작용하는 각각의 만유인력
+		double gf[2] = {}; //x,y 로 작용하는 각각의 만유인력
 	};
-	
+
 	void Set::gravity();//만유 인력을 추가시켜주는 함수
 
-	std::map<int, GF *> gf_info;//하나의 물체가 다른 물체들로 부터 생기는 모든 만유인력을 나타내는 map
+	std::map<int, GF> gf_info;//하나의 물체가 다른 물체들로 부터 생기는 모든 만유인력을 나타내는 map
 
-	std::may<int, std::map<int, GF *> all_gf_info;//모든 물체의 만유인력을 알수 있도록, 모든 gf_info를 포함 하는 map
-		
+	std::map<int, std::map<int, GF>> all_gf_info;//모든 물체의 만유인력을 알수 있도록, 모든 gf_info를 포함 하는 map
+
+
 };
